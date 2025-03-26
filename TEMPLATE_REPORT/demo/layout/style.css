@@ -84,7 +84,7 @@ img {
 }
 
 .section-content {
-  margin: 0 auto;
+  margin: -10px auto;
   padding: 0 20px;
   max-width: var(--site-max-width);
 }
@@ -93,7 +93,7 @@ header {
   position: fixed;
   width: 100%;
   z-index: 5;
-  background: rgba(20, 68, 0, 0.3);
+  height: 70px;
 }
 header .navbar {
   display: flex;
@@ -104,6 +104,7 @@ header .navbar {
 .navbar .nav-menu {
   display: flex;
   gap: 10px;
+  margin-right: -40px;
 }
 
 .navbar .nav-logo .logo-text {
@@ -214,3 +215,48 @@ footer .social-links a {
   opacity: 0.7;
   transition: opacity 0.3s ease;
 }
+.modal-content {
+  background-color: #0d371e; 
+  box-shadow: #0d371e;
+  color: #a6c09f; 
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  width: 100%; 
+  text-align: center;
+  position: relative;
+}
+
+.modal-title {
+  flex-grow: 1; 
+  text-align: center;
+}
+
+.modal-header .btn-close {
+  position: absolute;
+  right: 15px;
+}
+
+.modal-body .btn-primary {
+  background-color: #0d511d; 
+  border-color: #0f5d21;
+}
+
+.modal-body .btn-primary:hover {
+  background-color: #0f5d21; 
+}
+
+.modal-body input {
+  background-color: #fff; 
+  border: 1px solid #ccc; 
+}
+
+.modal-body input::placeholder {
+  color: #888;
+}
+.btn-success{
+  background-color: #0d511d;
+} 
