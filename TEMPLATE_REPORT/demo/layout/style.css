@@ -10,9 +10,9 @@
   --color-dark-olive: #3e401f;
   --color-forest-green: #0d371e;
   --color-muted-green: #508e42;
-  --color-sage-green: #7bdf17;
+  --color-sage-green: #a1ed08;
 
-  --color-light-mint: #cfe2cf;
+  --color-light-mint: #fdf751;
   --color-mint-green: #b5f4a6;
   --color-lime-pastel: #e9f2a7;
   --color-light-brown: #edfcdc;
@@ -21,10 +21,6 @@
   --color-bg-dark: #5a8279;
 
   --color-brown: #521d02;
-
-  --color-text-primary: var(--color-forest-green);
-  --color-text-secondary: var(--color-sage-green);
-  --color-text-light: var(--color-light-mint);
 
   /* Font Sizes */
   --font-size-xs: 0.75rem; /* 12px */
@@ -97,6 +93,7 @@ header {
   position: fixed;
   width: 100%;
   z-index: 5;
+  background: rgba(20, 68, 0, 0.3);
 }
 header .navbar {
   display: flex;
@@ -110,14 +107,14 @@ header .navbar {
 }
 
 .navbar .nav-logo .logo-text {
-  color: var(--color-forest-green);
+  color: var(--color-sage-green);
   font-family: "Gravitas One", serif;
   font-size: var(--font-size-xxl);
   font-weight: var(--font-weight-semibold);
 }
 .navbar .nav-menu .nav-link {
   padding: 10px 18px;
-  color: var(--color-forest-green);
+  color: var(--color-bg-light);
   border-radius: var(--border-radius-m);
   font-size: var(--font-size-l);
   transition: 0.3s ease;
@@ -136,7 +133,7 @@ header .navbar {
   display: flex;
   align-items: center;
   min-height: 100vh;
-  color: var(--color-forest-green);
+  color: var(--color-light-brown);
   justify-content: space-between;
 }
 .hero-video-background {
@@ -150,22 +147,32 @@ header .navbar {
   z-index: -1;
   transform: translateX(-50%) translateY(-50%);
   background-size: cover;
-  opacity: 0.6;
+  filter: brightness(60%);
 }
 .hero-details .title {
-  font-size: var(--font-size-xxxl);
-  color: var(--color-bright-lime);
+  font-size: 5rem;
+  color: var(--color-light-mint);
   margin-bottom: var(--spacing-m);
+  font-family: "Pacifico", serif;
 }
 
 .hero-details .subtitle {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-xxl);
   margin-bottom: var(--spacing-s);
 }
 
 .hero-details .description {
   margin-bottom: var(--spacing-l);
+  font-size: var(--font-size-l);
   line-height: 1.6;
+}
+.hero-details .buttons .button-order-now {
+  color: var(--color-bg-light);
+  font-size: var(--font-size-l);
+}
+
+.hero-details .buttons .button-order-now:hover {
+  color: var(--color-light-mint);
 }
 footer {
   background-color: var(--color-forest-green);
