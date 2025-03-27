@@ -13,39 +13,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Khi bấm "Sign Up" trong Login Modal
-        document
-          .getElementById("openRegisterModal")
-          .addEventListener("click", function () {
-            var loginModal = new bootstrap.Modal(
-              document.getElementById("loginModal")
-            );
-            var registerModal = new bootstrap.Modal(
-              document.getElementById("registerModal")
-            );
 
-            loginModal.hide(); // Ẩn Login Modal
-            setTimeout(() => registerModal.show(), 500); // Hiện Register Modal sau khi Login Modal ẩn
-          });
-
-        // Khi bấm "Login" trong Register Modal
-        document
-          .getElementById("openLoginModal")
-          .addEventListener("click", function () {
-            var loginModal = new bootstrap.Modal(
-              document.getElementById("loginModal")
-            );
-            var registerModal = new bootstrap.Modal(
-              document.getElementById("registerModal")
-            );
-
-            registerModal.hide(); // Ẩn Register Modal
-            setTimeout(() => loginModal.show(), 500); // Hiện Login Modal sau khi Register Modal ẩn
-          });
-      });
-    </script>
   </head>
   <body>
     <!-- Header/Navbar -->
@@ -88,6 +56,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Policy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
               </li>
             </ul>
           </div>
@@ -244,5 +215,6 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/jquery.js"></script>
   </body>
 </html>
