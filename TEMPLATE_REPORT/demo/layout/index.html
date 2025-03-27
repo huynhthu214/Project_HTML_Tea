@@ -13,52 +13,79 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Khi bấm "Sign Up" trong Login Modal
+        document
+          .getElementById("openRegisterModal")
+          .addEventListener("click", function () {
+            var loginModal = new bootstrap.Modal(
+              document.getElementById("loginModal")
+            );
+            var registerModal = new bootstrap.Modal(
+              document.getElementById("registerModal")
+            );
+
+            loginModal.hide(); // Ẩn Login Modal
+            setTimeout(() => registerModal.show(), 500); // Hiện Register Modal sau khi Login Modal ẩn
+          });
+
+        // Khi bấm "Login" trong Register Modal
+        document
+          .getElementById("openLoginModal")
+          .addEventListener("click", function () {
+            var loginModal = new bootstrap.Modal(
+              document.getElementById("loginModal")
+            );
+            var registerModal = new bootstrap.Modal(
+              document.getElementById("registerModal")
+            );
+
+            registerModal.hide(); // Ẩn Register Modal
+            setTimeout(() => loginModal.show(), 500); // Hiện Login Modal sau khi Register Modal ẩn
+          });
+      });
+    </script>
   </head>
   <body>
     <!-- Header/Navbar -->
     <header>
-      <nav class="navbar section-content navbar-expand-lg">
-        <div class="container-fluid">
-          <a href="#" class="nav-logo">
-            <h2 class="logo-text">🍃Tea</h2>
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div
-            class="collapse navbar-collapse justify-content-end"
-            id="navbarNav"
-          >
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="product.html">Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="blog.html">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Terms & conditions</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Policy</a>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <nav class="navbar section-content">
+        <a href="#" class="nav-logo">
+          <h2 class="logo-text">🍃Tea</h2>
+        </a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="product.html" class="nav-link">Products</a>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Terms & conditions</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Policy</a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#"
+              class="nav-link"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+              >Login</a
+            >
+          </li>
+        </ul>
       </nav>
     </header>
 
@@ -115,6 +142,98 @@
           <p class="mb-0">
             &copy; <span id="year"></span> 2025 Trang Tra. All rights reserved.
           </p>
+        </div>
+      </div>
+      <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title mx-auto">Login</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Account</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Enter your account name"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Enter your password"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary w-100">
+                  Login
+                </button>
+                <div class="text-center mt-3">
+                  <p>
+                    Don't have an account?
+                    <a href="#" id="openRegisterModal">Sign Up</a>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Register Modal -->
+      <div class="modal fade" id="registerModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title mx-auto">Sign Up</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="new-email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="new-email"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="new-password" class="form-label">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="new-password"
+                    placeholder="Create a password"
+                  />
+                </div>
+                <button type="submit" class="btn btn-success w-100">
+                  Sign Up
+                </button>
+                <div class="text-center mt-3">
+                  <p>
+                    Already have an account?
+                    <a href="#" id="openLoginModal">Login</a>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
